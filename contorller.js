@@ -14,6 +14,7 @@ var searchSchema = new mongoose.Schema({
     password: String,
     name: String,
     email: String,
+    gender:String,
     mobilenumber:String,
     bloodgroup: String,
     age: Number,
@@ -24,7 +25,7 @@ var searchlist = new mongoose.model("users2", searchSchema)
 
 exports.store = (req, res) => {
 
-    var { username, password, name, email, mobilenumber, bloodgroup, age, photo, aadharno } = req.body;
+    var { username, password, name, email,gender, mobilenumber, bloodgroup, age, photo, aadharno } = req.body;
 
     var createdoc = async () => {
         try {
@@ -33,6 +34,7 @@ exports.store = (req, res) => {
                 "password": password,
                 "name": name,
                 "email": email,
+                "gender": gender,
                 "mobilenumber": mobilenumber,
                 "bloodgroup": bloodgroup,
                 "age": age,
